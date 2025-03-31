@@ -1,0 +1,34 @@
+<mvc:View controllerName="cicddemoapp.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <!-- Tabelle aus dem unnamed Model und der Tabelle ZC_VIDEO mit den Spalten Title, Url und Description -->
+        <Table id="table" items="{/ZC_VIDEO}">
+            <headerToolbar>
+                <Toolbar>
+                    <Title text="{i18n>title}"/>
+                </Toolbar>
+            </headerToolbar>
+            <columns>
+                <Column width="20%">
+                    <Text text="Title"/>
+                </Column>
+                <Column width="20%">
+                    <Text text="URL"/>
+                </Column>
+                <Column width="60%">
+                    <Text text="Description"/>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem type="Navigation">
+                    <cells>
+                        <ObjectIdentifier title="{Title}" />
+                        <ObjectIdentifier title="{Url}" />
+                        <ObjectIdentifier title="{Description}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>
